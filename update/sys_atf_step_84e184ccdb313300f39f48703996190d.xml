@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_step">
+    <sys_atf_step action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description>Run Server Side Validation Script</description>
+        <display_name>Run Server Side Script</display_name>
+        <inputs/>
+        <order>1</order>
+        <step_config display_value="Run Server Side Script">41de4a935332120028bc29cac2dc349a</step_config>
+        <sys_class_name>sys_atf_step</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-05-28 14:45:23</sys_created_on>
+        <sys_id>84e184ccdb313300f39f48703996190d</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>Run Server Side Script</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy>protected</sys_policy>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_atf_step_84e184ccdb313300f39f48703996190d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-05-30 17:52:39</sys_updated_on>
+        <table/>
+        <test display_value="aCheck to see if script tests rollback">40e184ccdb313300f39f48703996190b</test>
+        <timeout/>
+    </sys_atf_step>
+    <sys_variable_value action="delete_multiple" query="document_key=84e184ccdb313300f39f48703996190d"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>84e184ccdb313300f39f48703996190d</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-05-28 14:45:23</sys_created_on>
+        <sys_id>cce184ccdb313300f39f48703996190d</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-05-28 15:03:49</sys_updated_on>
+        <value>(function(step, stepResult, jasmine, describe) {&#13;
+	&#13;
+	describe("A jasmine test with success result", function() {&#13;
+		beforeEach(function() {&#13;
+			//create the test sys_repo_config record&#13;
+			var gr = new GlideRecord('x_58872_needit_needit');&#13;
+			gr.setValue('number', '42');&#13;
+			gr.setValue('u_requested_for', 'abraham.lincoln');&#13;
+			gr.setValue('u_requested_for', 'abraham.lincoln');&#13;
+			gr.setValue('u_requested_for_email', 'abraham.lincoln@example.com');&#13;
+			gr.setValue('u_what_needed', 'hr1');&#13;
+			gr.insert();&#13;
+		});&#13;
+&#13;
+		it("Expect needit exists", function() {&#13;
+			var gr = new GlideRecord('x_58872_needit_needit');&#13;
+			gr.addQuery('number', '42');&#13;
+			gr.query();&#13;
+			expect(gr.getRowCount()).toEqual(1);&#13;
+		});&#13;
+&#13;
+	});&#13;
+	&#13;
+})(step, stepResult, jasmine, describe);&#13;
+&#13;
+jasmine.getEnv().execute();&#13;
+&#13;
+</value>
+        <variable display_value="">989d9e235324220002c6435723dc3484</variable>
+    </sys_variable_value>
+</record_update>
